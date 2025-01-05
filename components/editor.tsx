@@ -54,12 +54,6 @@ export default function Editor({post} : EditorProps) {
 
 
 
-
-
-
-
-    
-
     useEffect(() => {
         if(typeof window !== 'undefined') {
             setIsMounted(true);
@@ -122,7 +116,7 @@ const onSubmit = async (data: postPatchSchemaType) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit) }>
-            <div className="grid w-full gap-10">
+            <div className="grid w-full gap-10 ">
                 <div className="flex w-full items-center justify-between">
                     <div className="flex items-center space-x-10">
                         <Link
@@ -133,12 +127,12 @@ const onSubmit = async (data: postPatchSchemaType) => {
                         </Link>
                         <p className="text-sm text-muted-foreground">公開</p>
                     </div>
-                    <button className={cn(buttonVariants())} type="submit">
-                        {isSaving && <Icon.spinner className="animate-spin mr-2"/>}
+                    <button className={cn(buttonVariants())} type="submit" >
+                        {isSaving && <Icon.spinner className="w-4 h-4 mr-2 animate-spin "/>}
                         <span>保存</span>
                     </button>
                 </div>
-                <div className="w-[800px] mx-auto">
+                <div className=" mx-auto">
                     <TextareaAutoSize
                         id="title"
                         autoFocus
@@ -158,3 +152,7 @@ const onSubmit = async (data: postPatchSchemaType) => {
         </form>
    )
 }
+
+
+
+

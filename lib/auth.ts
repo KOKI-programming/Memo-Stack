@@ -25,9 +25,12 @@ export const authOptions :NextAuthOptions = {
          callbacks: {
 
             async jwt({token, user}) {
+                console.log("JWT Callback - User:", user); // デバッグ用
+  console.log("JWT Callback - Token before:", token); // デバッグ用
                 if(user) {
                     return{...token, id: user.id};
                 }
+                console.log("JWT Callback - Token after:", token); // デバッグ用
                 return token;
             },
              async session({token, session}) {
@@ -44,6 +47,7 @@ export const authOptions :NextAuthOptions = {
             strategy: "jwt",
          }
     };
+
 
 
 

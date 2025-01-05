@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
   	extend: {
 		container: {
-			center: true, // 中央揃えを有効化
+			center: true , // 中央揃えを有効化
 			padding: "3rem", // 全体に2remの余白を追加
 			screens: {
 			  sm: "640px", // smサイズでの最大幅

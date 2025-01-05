@@ -8,7 +8,8 @@ import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
 
-const user =await getCurrentUser();
+const user = await getCurrentUser();
+
 
 if (!user) {
   redirect("/login");
@@ -23,13 +24,14 @@ if (!user) {
       title: true,
       published: true,
       createdAt: true,
+      authorId: true,
     },
     orderBy: {
       updatedAt: "desc",
     },
   });
 
-  console.log(posts);
+
 
 
 
@@ -56,3 +58,5 @@ if (!user) {
     </DashBoardShell>
   );
 }
+
+

@@ -21,8 +21,8 @@ async function getPostForUser(postId: Post["id"], userId: User["id"]) {
   });
 
   return post;
-
 }
+
 
 export default async function EditorPage({params} : EditorProps) {
   const user = await getCurrentUser();
