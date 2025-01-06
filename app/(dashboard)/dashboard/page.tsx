@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();
+  console.log("User:", user); // ユーザー情報をログに出力
 
   // ログインしていない場合、ログインページにリダイレクト
   if (!user) {
@@ -31,8 +32,6 @@ export default async function DashboardPage() {
     },
   });
 
-  // 取得した投稿データをコンソールに出力して確認
-  console.log("Posts by User:", posts);
 
   return (
     <DashBoardShell>
