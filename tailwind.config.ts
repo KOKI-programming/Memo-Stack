@@ -6,12 +6,13 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+	"./src/**/*.{ts,tsx}",
   ],
   theme: {
   	extend: {
 		container: {
 			center: true , // 中央揃えを有効化
-			padding: "3rem", // 全体に2remの余白を追加
+			padding: "2rem", // 全体に2remの余白を追加
 			screens: {
 			  sm: "640px", // smサイズでの最大幅
 			  md: "768px", // mdサイズでの最大幅
@@ -20,7 +21,6 @@ const config: Config = {
 			 "2xl": "1536px", // 2xlサイズでの最大幅
 			},
 		  },
-
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
@@ -69,9 +69,23 @@ const config: Config = {
   				'2': 'hsl(var(--chart-2))',
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
+  				'5': 'hsl(var(--chart-5))',
   			}
-  		}
+  		},
+		  keyframes: {
+			slideIn: {
+			  '0%': { transform: 'translateX(-100%)' },
+			  '100%': { transform: 'translateX(100%)' },
+			},
+			slideOut: {
+			  '0%': { transform: 'translateX(100%)' },
+			  '100%': { transform: 'translateX(-100%)' },
+			},
+		  },
+		  animation: {
+			'slide-in': 'slideIn 0.5s ease-in-out forwards',
+			'slide-out': 'slideOut 0.5s ease-in-out forwards',
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate"),require('@tailwindcss/typography')],

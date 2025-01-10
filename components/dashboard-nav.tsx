@@ -24,7 +24,7 @@ export default function DashboardNav({ items }: DashboardNavProps) {
             {items.map((item, index) => {
                 const Icon = Icons[item.icon as keyof typeof Icons] || Icons["arrowRight"];
 
- 
+
                 return (
                 <Link href={item.href!} key={index}>
                     <span

@@ -162,7 +162,7 @@ export default function IndexPage() {
 
           <section id="contact" className="container py-8 md:py-12 lg:py-24">
             <div className="max-w-[58rem] mx-auto text-center flex flex-col gap-4">
-                <h2 className="font-extrabold text-3xl md:text-6xl">Contact Me</h2>
+                <h2 className="font-extrabold text-3xl md:text-6xl">Contact Me!</h2>
                 <p className="text-muted-foreground sm:text-lg sm:leading-7">
                     もしもwebサービスが気に入った場合は下記XからDMでご連絡ください。
                     <br/>お仕事のご連絡をお待ちしております。

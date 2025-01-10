@@ -2,13 +2,13 @@ import { MarketingConfig } from "@/types";
 
 export const marketingConfig: MarketingConfig = {
     mainNav: [
-        { title:"特徴",
-          href: "#features",
+        { title:"ホーム",
+          href: "/",
         },
-        { title:"ブログ",
+        { title:"ブログ例",
           href: "/blog",
         },
-        { title:"価格",
+        { title:"プラン",
           href: "/pricing",
         },
     ],
