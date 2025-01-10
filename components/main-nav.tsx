@@ -38,14 +38,14 @@ export default function MainNav({ items }: MainNavProps) {
                 <span className="flex items-center gap-1">
                     {showMobileMenu ? (
                         // 切り替え後のアイコン
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
-                        viewBox="0 0 20 20"
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20" height="20" viewBox="0 0 24 24"
                         >
                             <path
-                            fill="currentColor"
-                            d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15l-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152l2.758 3.15a1.2 1.2 0 0 1 0 1.698z"
+                            fill="none"
+                            stroke="currentColor"
+                            d="M20 20L4 4m16 0L4 20"
                             />
                         </svg>
                     ) : (
@@ -59,7 +59,6 @@ export default function MainNav({ items }: MainNavProps) {
                             <path
                                 fill="none"
                                 stroke="currentColor"
-                                
                                 d="M4 6h16M4 12h16M4 18h16"
                             />
                         </svg>

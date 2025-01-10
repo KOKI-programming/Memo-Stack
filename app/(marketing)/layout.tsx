@@ -5,7 +5,6 @@ import SiteFooter from "@/components/site-footer";
 import { buttonVariants } from "@/components/ui/button";
 import { marketingConfig } from "@/config/marketing";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { useState } from "react";
 import { Icon } from "@/components/icon";
 
@@ -21,7 +20,7 @@ export default function MarketingLayout({
 
     try {
       // Simulate a login request or redirect
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // 2秒の遅延
+      await new Promise((resolve) => setTimeout(resolve, 500)); // 0.5秒の遅延
       // Redirect to login page (simulate successful login)
       window.location.href = "/login";
     } catch (error) {
@@ -41,15 +40,13 @@ export default function MarketingLayout({
               onClick={handleLoginClick}
               className={cn(
                 buttonVariants({ size: "sm", variant: "secondary" }),
-                "px-4 flex items-center justify-center"
+                "px-4 flex items-center justify-center transition-colors duration-200 hover:bg-accent hover:text-accent-foreground"
               )}
               disabled={isLoading} // ロード中はボタンを無効化
             >
               {isLoading ? (
                 <Icon.spinner className="animate-spin mr-2 h-4 w-4" />
-              ) : (
-                null
-              )}
+              ) : null}
               {isLoading ? "ログイン中..." : "ログイン"}
             </button>
           </nav>

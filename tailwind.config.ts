@@ -18,7 +18,7 @@ const config: Config = {
 			  md: "768px", // mdサイズでの最大幅
 			  lg: "1024px", // lgサイズでの最大幅
 			  xl: "1280px", // xlサイズでの最大幅
-			 "2xl": "1536px", // 2xlサイズでの最大幅
+			 "2xl": "1500px", // 2xlサイズでの最大幅
 			},
 		  },
   		backgroundImage: {
