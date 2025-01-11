@@ -14,7 +14,7 @@ export default function IndexPage() {
     setIsLoading(true);
     try {
       // 実際の処理があればここに記述（例：APIコール）
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // 2秒の遅延をシミュレート
+      await new Promise((resolve) => setTimeout(resolve, 500)); // 0.5秒の遅延をシミュレート
       window.location.href = "/login"; // ログインページへのリダイレクト
     } catch (error) {
       console.error("Error during start action:", error);

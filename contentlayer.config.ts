@@ -43,9 +43,36 @@ export const Post = defineDocumentType(() => ({
 }
 }));
 
+export const Page = defineDocumentType(() => ({
+    name: "Page",
+    filePathPattern: `pages/**/*.mdx`,
+    contentType: "mdx",
+    fields: {
+      title: {
+        type: "string",
+        required: true,
+      },
+      description: {
+        type: "string",
+      },
+    },
+    computedFields: {
+        slug:{
+            type: 'string',
+            resolve: (doc) => `/${doc._raw.flattenedPath}`,
+        },
+        slugAsParams: {
+            type: 'string',
+            resolve: (doc) => doc._raw.flattenedPath.split('/').splice(1)[0],
+        },
+    }
+  }))
+
+
+
 export default makeSource({
     contentDirPath: "./content",
-    documentTypes: [Post],
+    documentTypes: [Post, Page],
 
  });
 
