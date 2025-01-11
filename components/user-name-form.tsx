@@ -62,17 +62,17 @@ export function UserNameForm({ user, className, ...props }: UserNameFormProps) {
     if (!response?.ok) {
       return toast({
         title: "問題が発生しました",
-            description: "名前は保存されませんでした。もう一度お試しください。",
-            variant: "destructive",
+        description: "名前は保存されませんでした。もう一度お試しください。",
+        variant: "destructive",
       })
     }
-    router.refresh();
 
     return toast({
-        title: '名前が保存されました',
-        description: '名前が正常に保存されました',
-    })
-  }
+      title: "名前が保存されました",
+      description: "名前が正常に保存されました",
+    });
+  };
+
 
   return (
     <form
@@ -84,22 +84,23 @@ export function UserNameForm({ user, className, ...props }: UserNameFormProps) {
         <CardHeader>
           <CardTitle>あなたの名前</CardTitle>
           <CardDescription>
-          フルネームまたは使いやすい表示名を入力してください。
+            フルネームまたは使いやすい表示名を入力してください。
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="name">
-              Name
+              名前
             </Label>
             <Input
               id="name"
               className="w-[400px]"
               size={32}
-              {...register("name")}
             />
             {errors?.name && (
-              <p className="px-1 text-xs text-red-600">{"3文字以上で入力してください"}</p>
+              <p className="px-1 text-xs text-red-600">
+                {"3文字以上で入力してください"}
+              </p>
             )}
           </div>
         </CardContent>
@@ -119,3 +120,4 @@ export function UserNameForm({ user, className, ...props }: UserNameFormProps) {
     </form>
   )
 }
+

@@ -1,79 +1,178 @@
-// contentlayer.config.ts
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import {
+  defineDocumentType,
+  makeSource,
+  ComputedFields,
+} from "contentlayer/source-files";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
+const computedFields: ComputedFields = {
+  slug: {
+    type: "string",
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+  },
+  slugAsParams: {
+    type: "string",
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+  },
+};
+
+export const Doc = defineDocumentType(() => ({
+  name: "Doc",
+  filePathPattern: `docs/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+    published: {
+      type: "boolean",
+      default: true,
+    },
+  },
+  computedFields,
+}));
+
+export const Guide = defineDocumentType(() => ({
+  name: "Guide",
+  filePathPattern: `guides/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+    date: {
+      type: "date",
+      required: true,
+    },
+    published: {
+      type: "boolean",
+      default: true,
+    },
+    featured: {
+      type: "boolean",
+      default: false,
+    },
+  },
+  computedFields,
+}));
 
 export const Post = defineDocumentType(() => ({
-  name: 'Post',
+  name: "Post",
   filePathPattern: `blog/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
-        type: 'string',
-        required: true
+      type: "string",
+      required: true,
     },
     description: {
-        type: 'string',
+      type: "string",
     },
     date: {
-        type: 'date',
-        required: true
+      type: "date",
+      required: true,
     },
     published: {
-        type: 'boolean',
-        default: true
+      type: "boolean",
+      default: true,
     },
     image: {
-        type: 'string',
-        required: true
+      type: "string",
+      required: true,
     },
-    authors: { // authors フィールドを追加
-        type: 'list',
-        of: { type: 'string' },
-      },
+    authors: {
+      type: "list",
+      of: { type: "string" },
+      required: true,
+    },
   },
-  computedFields: {
-    slug:{
-        type: 'string',
-        resolve: (doc) => `/${doc._raw.flattenedPath}`,
+  computedFields,
+}));
+
+export const Author = defineDocumentType(() => ({
+  name: "Author",
+  filePathPattern: `authors/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
     },
-    slugAsParams: {
-        type: 'string',
-        resolve: (doc) => doc._raw.flattenedPath.split('/').splice(1)[0],
+    description: {
+      type: "string",
     },
-}
+    avatar: {
+      type: "string",
+      required: true,
+    },
+    twitter: {
+      type: "string",
+      required: true,
+    },
+  },
+  computedFields,
 }));
 
 export const Page = defineDocumentType(() => ({
-    name: "Page",
-    filePathPattern: `pages/**/*.mdx`,
-    contentType: "mdx",
-    fields: {
-      title: {
-        type: "string",
-        required: true,
-      },
-      description: {
-        type: "string",
-      },
+  name: "Page",
+  filePathPattern: `pages/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
     },
-    computedFields: {
-        slug:{
-            type: 'string',
-            resolve: (doc) => `/${doc._raw.flattenedPath}`,
-        },
-        slugAsParams: {
-            type: 'string',
-            resolve: (doc) => doc._raw.flattenedPath.split('/').splice(1)[0],
-        },
-    }
-  }))
-
-
+    description: {
+      type: "string",
+    },
+  },
+  computedFields,
+}));
 
 export default makeSource({
-    contentDirPath: "./content",
-    documentTypes: [Post, Page],
-
- });
-
-
+  contentDirPath: "./content",
+  documentTypes: [Page, Doc, Guide, Post, Author],
+  mdx: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypePrettyCode,
+        {
+          theme: "github-dark",
+          onVisitLine(node: any) {
+            if (node.children.length === 0) {
+              node.children = [{ type: "text", value: " " }];
+            }
+          },
+          onVisitHighlightedLine(node: any) {
+            node.properties.className.push("line--highlighted");
+          },
+          onVisitHighlightedWord(node: any) {
+            node.properties.className = ["word--highlighted"];
+          },
+        },
+      ],
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: ["subheading-anchor"],
+            ariaLabel: "Link to section",
+          },
+        },
+      ],
+    ],
+  },
+});

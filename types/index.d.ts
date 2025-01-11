@@ -18,6 +18,10 @@ export type SiteConfig = {
     };
 };
 
+export type DocsConfig = {
+    mainNav: MainNavItem[]
+    sidebarNav: SidebarNavItem[]
+  } 
 
 
 
