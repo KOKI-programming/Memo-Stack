@@ -1,17 +1,8 @@
-import { CardSkeleton } from "@/components/card-skeleton"
-import DashBoardHeader from "@/components/dashboard-header";
-import DashBoardShell from "@/components/dashboard.shell";
-
-export default function DashboardSettingsLoading() {
+export default function Loading() {
   return (
-    <DashBoardShell>
-      <DashBoardHeader
-        heading="Settings"
-        text="Manage account and website settings."
-      />
-      <div className="grid gap-10">
-        <CardSkeleton />
-      </div>
-    </DashBoardShell>
-  )
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
+      <span className="ml-4 text-lg font-medium">読み込み中...</span>
+    </div>
+  );
 }

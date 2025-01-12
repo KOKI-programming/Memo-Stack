@@ -8,7 +8,6 @@ import Mdx from "@/components/mdx-component"
 import { DocsPageHeader } from "@/components/page-header"
 import { DashboardTableOfContents } from "@/components/toc"
 
-import "@/styles/mdx.css"
 import { Metadata } from "next"
 
 

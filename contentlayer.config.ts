@@ -157,10 +157,16 @@ export default makeSource({
             }
           },
           onVisitHighlightedLine(node: any) {
-            node.properties.className.push("line--highlighted");
+            // 配列が存在しない場合を防ぐ
+            if (node.properties?.className) {
+              node.properties.className.push("line--highlighted");
+            }
           },
           onVisitHighlightedWord(node: any) {
-            node.properties.className = ["word--highlighted"];
+            // 配列が存在しない場合を防ぐ
+            if (node.properties) {
+              node.properties.className = ["word--highlighted"];
+            }
           },
         },
       ],

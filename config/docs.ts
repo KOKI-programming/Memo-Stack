@@ -3,11 +3,11 @@ import { DocsConfig } from "types"
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
-      title: "Documentation",
+      title: "ドキュメント",
       href: "/docs",
     },
     {
-      title: "Guides",
+      title: "ガイド",
       href: "/guides",
     },
   ],

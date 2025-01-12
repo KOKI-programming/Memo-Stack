@@ -21,8 +21,8 @@ export default function GuidesPage() {
   return (
     <div className="py-6 lg:py-10">
       <DocsPageHeader
-        heading="Guides"
-        text="This section includes end-to-end guides for developing Next.js 13 apps."
+        heading="ガイド"
+        text="このセクションでは初心者、中級者に向けたガイドを載せております。"
       />
       {guides?.length ? (
         <div className="grid gap-4 md:grid-cols-2 md:gap-6">
