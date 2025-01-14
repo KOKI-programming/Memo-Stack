@@ -1,3 +1,5 @@
+import { User } from "@prisma/client"
+
 export type NavItem = {
     title: string;
     href: string;
@@ -21,7 +23,7 @@ export type SiteConfig = {
 export type DocsConfig = {
     mainNav: MainNavItem[]
     sidebarNav: SidebarNavItem[]
-  } 
+  }
 
 
 
@@ -53,3 +55,14 @@ export type DashboardConfig = {
 
 
 
+export type SubscriptionPlan = {
+    name: string
+    description: string
+    stripePriceId: string
+  }
+
+  export type UserSubscriptionPlan = SubscriptionPlan &
+    Pick<User, "stripeCustomerId" | "stripeSubscriptionId"> & {
+      stripeCurrentPeriodEnd: number
+      isPro: boolean
+    }

@@ -13,6 +13,7 @@ export default function UserAuthForm() {
 
     const [isGithubLoading, setIsGithubLoading] = useState<boolean>(false);
     const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
+    const [isLineLoading, setIsLineLoading] = useState<boolean>(false);
 
 
     return(
@@ -57,6 +58,21 @@ export default function UserAuthForm() {
                 <Icon.google className = "mr-2"/>
                 }
                     Google
+            </button>
+
+
+            <button
+            className={cn(buttonVariants({variant : "outline"}))}
+            onClick={() =>
+            {
+                setIsLineLoading(true),
+                signIn("line");
+            }}
+            >
+                {isLineLoading ? <Icon.spinner className="mr-2 animate-spin"/> :
+                <Icon.line className = "mr-3"/>
+                }
+            LINE
             </button>
 
 

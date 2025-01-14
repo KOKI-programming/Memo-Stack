@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.9",
     "@contentlayer/core": "^0.3.4",
     "@contentlayer/source-files": "^0.3.4",
     "@editorjs/code": "^2.9.3",
@@ -27,6 +28,7 @@
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-toast": "^1.2.4",
+    "@supabase/supabase-js": "^2.47.12",
     "@uidotdev/usehooks": "^2.4.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -48,6 +50,7 @@
     "rehype-slug": "^6.0.0",
     "remark": "^15.0.1",
     "remark-gfm": "^3.0.1",
+    "stripe": "^17.5.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "unist-util-visit": "^5.0.0",

@@ -68,7 +68,7 @@ export default function PricingPage() {
       </div>
 
       <div id="premium" className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
-        <h2 className="font-black text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-4xl">
           ※現在、プレミアムプランはご利用できません。
           <br />
         </h2>
