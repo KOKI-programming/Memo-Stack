@@ -72,7 +72,7 @@ export default function UserAuthForm() {
                 {isLineLoading ? <Icon.spinner className="mr-2 animate-spin"/> :
                 <Icon.line className = "mr-3"/>
                 }
-            LINE
+                LINE
             </button>
 
 

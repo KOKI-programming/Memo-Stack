@@ -5,4 +5,4 @@ export default function Loading() {
         <span className="ml-4 text-lg font-medium">読み込み中...</span>
       </div>
     );
-  }  
+  }
