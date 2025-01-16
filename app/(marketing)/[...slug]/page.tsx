@@ -5,6 +5,9 @@ import Mdx from "@/components/mdx-component"
 import { Metadata } from "next"
 import { siteConfig } from "@/config/site"
 import { absoluteUrl } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 
 interface PageProps {
   params: {
@@ -79,9 +82,10 @@ export default async function PagePage({ params }: PageProps) {
   }
 
   return (
+    <div>
     <article className="container max-w-3xl py-6 lg:py-12">
       <div className="space-y-4">
-        <h1 className="inline-block font-heading text-4xl lg:text-5xl">
+        <h1 className="inline-block font-heading text-4xl lg:text-5xl ">
           {page.title}
         </h1>
         {page.description && (
@@ -91,5 +95,14 @@ export default async function PagePage({ params }: PageProps) {
       <hr className="my-4" />
       <Mdx code={page.body.code} />
     </article>
+     <Link
+     href={"/"}
+     className={cn(buttonVariants({ variant: "ghost" }),
+         "absolute left-4  top-4 md:left-8 md:top-8"
+     )}
+ >
+     戻る
+ </Link>
+ </div>
   )
 }

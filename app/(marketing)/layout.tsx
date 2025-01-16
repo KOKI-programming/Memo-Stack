@@ -7,6 +7,7 @@ import { marketingConfig } from "@/config/marketing";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Icon } from "@/components/icon";
+import Button2 from "@/components/ui/Button square";
 
 export default function MarketingLayout({
   children,
@@ -31,12 +32,13 @@ export default function MarketingLayout({
   };
 
   return (
-    <div>
-      <header className="container z-40 bg-background">
-        <div className="h-20 py-6 flex items-center justify-between">
+    <div className="flex min-h-screen flex-col space-y-6">
+      <header className="sticky top-0  z-40  border-b bg-background">
+        <div  className="container h-16 py-4 flex items-center justify-between">
           <MainNav items={marketingConfig.mainNav} />
           <nav>
-            <button
+            <button>
+              <Button2
               onClick={handleLoginClick}
               className={cn(
                 buttonVariants({ size: "sm", variant: "secondary" }),
@@ -48,6 +50,7 @@ export default function MarketingLayout({
                 <Icon.spinner className="animate-spin mr-2 h-4 w-4" />
               ) : null}
               {isLoading ? "ログイン中..." : "ログイン"}
+            </Button2>
             </button>
           </nav>
         </div>

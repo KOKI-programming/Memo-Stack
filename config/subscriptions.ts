@@ -3,7 +3,7 @@ import { SubscriptionPlan } from "types"
 export const freePlan: SubscriptionPlan = {
   name: "無料",
   description:
-    "無料プランでは投稿数が 3 件に制限されています。PROプランにアップグレードすると投稿数が無制限になります。",
+    "プレミアムプランの解禁予定は未定です。",
   stripePriceId: "",
 }
 

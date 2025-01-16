@@ -8,11 +8,11 @@ export default function BlogPage() {
     const posts = allPosts;
 
     return (
-        <div className="container max-w-4xl py-6 lg:py-10">
+        <div className="container max-w-4xl py-6 lg:py-10 fade-in">
             <div>
               <div className="space-y-4">
                 <h1 className="font-extrabold text-4xl lg:text-5xl tracking-tight">
-                    Blog🚀
+                    ブログ🚀
                 </h1>
                 <p className="text-muted-foreground text-xl">
                     ContentLayerとMDXで書いています。</p>
@@ -21,7 +21,7 @@ export default function BlogPage() {
             <hr className="my-8"/>
         <div className="grid sm:grid-cols-2 gap-10">
             {posts.map((post) => (
-            <article key={post._id} className="relative flex flex-col space-y-2">
+            <article key={post._id} className="relative  flex-col space-y-2 block">
                 <Image
                 src={post.image}
                 alt={post.title}

@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Icon as Icons } from "@/components/icon";
 import { useState } from "react";
+import Button2 from "@/components/ui/Button square";
+
 
 
 
@@ -27,8 +29,8 @@ export default function PricingPage() {
   };
 
   return (
-    <section className="container flex flex-col gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24">
-      <div className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
+    <section className="container flex flex-col gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24 fade-in"> 
+      <div className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem] ">
         <h2 className="font-black text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           シンプルプラン
         </h2>
@@ -36,7 +38,7 @@ export default function PricingPage() {
           ブログへの無制限の投稿が可能です。
         </p>
       </div>
-      <div className="grid w-full items-start gap-10 rounded-lg border p-10 md:grid-cols-[1fr_200px]">
+      <div className="grid w-full items-start gap-10 rounded-lg border p-10 md:grid-cols-[1fr_200px] ">
         <div className="grid gap-6">
           <h3 className="text-xl font-bold sm:text-2xl">シンプルプランに含まれるもの</h3>
           <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
@@ -53,7 +55,8 @@ export default function PricingPage() {
             <h4 className="text-7xl font-bold">無料</h4>
             <p className="text-sm font-medium text-muted-foreground">For Free</p>
           </div>
-          <button
+          <button>
+            <Button2
             onClick={handleStartClick}
             className={cn(buttonVariants({ size: "lg" }))}
             disabled={isLoading} // ロード中はボタンを無効化
@@ -63,17 +66,18 @@ export default function PricingPage() {
             ) : (
               "はじめる"
             )}
+          </Button2>
           </button>
         </div>
       </div>
 
       <div id="premium" className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-4xl">
+        <h2 className="font-bold text-1xl leading-[1.1] sm:text-3xl md:text-4xl">
           ※現在、プレミアムプランはご利用できません。
           <br />
         </h2>
       </div>
-      <div className="bg-gray-200 text-gray-900 p-4 rounded opacity-50">
+      <div className="bg-gray-200 text-gray-900 p-4 rounded opacity-50 block">
         <h2 className="font-black text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           プレミアムプラン
         </h2>

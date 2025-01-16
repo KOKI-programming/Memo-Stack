@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Icon } from "@/components/icon";
 import { useState } from "react";
 import { signOut } from "next-auth/react";
+import Button2 from "@/components/ui/Button square";
 
 export default function DashboardLayout({
     children,
@@ -35,7 +36,8 @@ export default function DashboardLayout({
                 <div className="container flex items-center justify-between py-4 h-16">
                     <MainNav items={dashboardConfig.mainNav} />
                     <nav>
-                        <button
+                        <button>
+                            <Button2
                             onClick={handleLogoutClick}
                             className={cn(
                                 buttonVariants({ size: "sm", variant: "secondary" }),
@@ -47,6 +49,7 @@ export default function DashboardLayout({
                                 <Icon.spinner className="animate-spin mr-2 h-4 w-4" />
                             ) : null}
                             {isLoading ? "ログアウト中..." : "ログアウト"}
+                        </Button2>
                         </button>
                     </nav>
                 </div>

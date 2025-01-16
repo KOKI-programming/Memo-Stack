@@ -63,17 +63,19 @@ export function BillingForm({
             プランをご利用中です。
           </CardDescription>
         </CardHeader>
-        <CardContent>{subscriptionPlan.description}</CardContent>
+        <CardContent className="font-bold">{subscriptionPlan.description}</CardContent>
+        <div className="bg-gray-200 text-gray-900 p-4 rounded opacity-50"> 
         <CardFooter className="flex flex-col items-start space-y-2 md:flex-row md:justify-between md:space-x-0">
           <button
             type="submit"
             className={cn(buttonVariants())}
             disabled={isLoading}
           >
-            {isLoading && (
+            {/* {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
-            {subscriptionPlan.isPro ? "Manage Subscription" : "Upgrade to PRO"}
+            {subscriptionPlan.isPro ? "Manage Subscription" : "プレミアムプラン"} */}
+            プレミアムプラン
           </button>
           {subscriptionPlan.isPro ? (
             <p className="rounded-full text-xs font-medium">
@@ -84,6 +86,7 @@ export function BillingForm({
             </p>
           ) : null}
         </CardFooter>
+        </div>
       </Card>
     </form>
   )

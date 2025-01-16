@@ -4,6 +4,7 @@ import { NavItem } from "@/types";
 import Link from "next/link";
 import { ReactNode, useState } from "react";
 import MobileNav from "./mobile-nav";
+import Button1 from "@/components/ui/Button circle";
 
 interface MainNavProps {
     items: NavItem[];

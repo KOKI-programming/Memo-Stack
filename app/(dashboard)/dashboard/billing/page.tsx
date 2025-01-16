@@ -38,26 +38,9 @@ export default async function BillingPage() {
     <DashBoardShell>
       <DashBoardHeader
         heading="請求する"
-        text="請求とサブスクリプション プランを管理します。"
+        text="請求とサブスクリプションプランを管理します。"
       />
       <div className="grid gap-8">
-        <Alert className="!pl-14">
-          <Icons.warning />
-          <AlertTitle>これはデモアプリです。</AlertTitle>
-          <AlertDescription>
-          このアプリは、Stripeテスト環境を使用したデモ アプリです。テストカード番号のリストは、
-          {" "}
-            <a
-              href="https://stripe.com/docs/testing#cards"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-8"
-            >
-              Stripe docs
-            </a>
-            で確認できます。
-          </AlertDescription>
-        </Alert>
         <BillingForm
           subscriptionPlan={{
             ...subscriptionPlan,

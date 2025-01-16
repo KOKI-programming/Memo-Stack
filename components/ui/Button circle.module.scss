@@ -1,0 +1,43 @@
+.icon {
+    width :16px;
+    height: 16px;
+    stroke-width: 2;
+    color: #000000;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    right:22px;
+}
+
+.title {
+    letter-spacing: -0.5px;
+    font-weight: bold;
+    z-index:1;
+    font-family: 'Noto Sans JP', sans-serif; /* フォントを適用 */
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    cursor: pointer;
+
+    background-color: rgb(0, 0, 0);
+    border-radius: 24px;
+    padding: 12px 36px;
+    overflow: clip;
+}
+
+.circle {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #e2e2e2;
+    position: absolute;
+    left: 22px;
+}

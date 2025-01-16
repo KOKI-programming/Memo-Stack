@@ -1,14 +1,70 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 import { Icon } from "@/components/icon"; // 必要に応じてIconをインポート
+import Button1 from "@/components/ui/Button circle";
+import gsap from "gsap";
+import SplitTextJS from "split-text-js";
+
 
 export default function IndexPage() {
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const titles = gsap.utils.toArray(".text-wrapper p");
+    const tl = gsap.timeline({ repeat: -1 });
+
+    titles.forEach((title) => {
+      const splitTitle = new SplitTextJS(title);
+
+      tl.from(
+        splitTitle.chars,
+        {
+          opacity: 0,
+          y: 80,
+          rotateX: -90,
+          stagger: 0.02,
+        },
+        "<"
+      ).to(
+        splitTitle.chars,
+        {
+          opacity: 0,
+          y: -80,
+          rotateX: 90,
+          stagger: 0.02,
+        },
+        "<1"
+      );
+    });
+    const handleMouseMove = (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      gsap.to(".circle", {
+        x: mouseX,
+        y: mouseY,
+        stagger: -0.1,
+      });
+      gsap.set(".cursor", {
+        x: mouseX,
+        y: mouseY,
+      });
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+
+
+
 
   const handleStartClick = async () => {
     setIsLoading(true);
@@ -23,41 +79,53 @@ export default function IndexPage() {
     }
   };
 
+
   return (
     <>
-      <section className="pt-6 md:pt-10 lg:py-32 pb-8 md:pb-12 mx-4 md:mx-10 lg:mx-20">
-        <div className="container mx-auto text-center flex flex-col items-center gap-4 max-w-[64rem]">
+      <section className="pt-6 md:pt-10 lg:py-32 pb-8 md:pb-12 mx-4 md:mx-10 lg:mx-20 ">
+        <div className="container mx-auto text-center flex flex-col items-center gap-4 max-w-[64rem]  overflow-hidden">
           <Link
             href={siteConfig.links.x}
             className="bg-muted px-4 py-1.5 rounded-2xl font-medium text-sm"
           >
             Xをフォローする
           </Link>
-          <h1 className="font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Post Writer
+          <div className="container">
+          <div className="cursor"></div>
+
+     <section className="circles">
+      <div className="circle circle1"></div>
+      <div className="circle circle2"></div>
+      <div className="circle circle3"></div>
+          <h1 className="font-extrabold text-3xl sm:text-5xl md:text-7xl lg:text-8xl ">
+            <div className="slide-in-up content ">
+               Post Writer
+            </div>
           </h1>
-          <p className="text-muted-foreground sm:text-xl leading-normal max-w-[42rem]">
+      </section>
+          </div>
+          <p className="text-muted-foreground sm:text-xl md:text-2xl lg:text-3xl leading-normal max-w-[52rem] slide-in-up">
             このアプリケーションはユーザーが自由に投稿をポストする事が出来ます
           </p>
-          <div className="space-x-4">
-            <button
+          <div className="space-x-4  flex-col slide-in-up">
+            <button>
+              <Button1
               onClick={handleStartClick}
-              className={cn(buttonVariants({ size: "lg" }))}
               disabled={isLoading} // ローディング中はボタンを無効化
             >
               {isLoading ? (
                 <Icon.spinner className="animate-spin mr-2 h-4 w-4" />
               ) : null}
-              {isLoading ? "読み込み中..." : "はじめる"}
+              {isLoading ? "" : "はじめる"}
+              </Button1>
             </button>
-            <Link
+            <button>
+            <Button1
               href={siteConfig.links.github}
-              className={cn(buttonVariants({ size: "lg", variant: "outline" }))}
-              target="_blank"
-              rel="noreferrer"
             >
-              Github
-            </Link>
+              GitHub
+            </Button1>
+            </button>
           </div>
         </div>
       </section>
@@ -66,16 +134,24 @@ export default function IndexPage() {
         id="features"
         className="container py-8 md:py-12 lg:py-24 bg-slate-50 space-y-6"
       >
-        <div className="text-center space-y-6 max-w-[58rem] mx-auto">
-          <h2 className="font-extrabold text-3xl md:text-6xl">サービスの特徴</h2>
-          <p className="text-muted-foreground sm:text-lg sm:leading-7">
+        <div className="text-center space-y-20 max-w-[58rem] mx-auto">
+          <div>
+          <h2 className="my-7 font-extrabold text-3xl md:text-6xl text-wrapper  ">
+            <p>サービスの特徴</p>
+            <p>POST</p>
+            <p>Todo</p>
+          </h2>
+          </div>
+          <div className="mt-8">
+          <p className="text-muted-foreground sm:text-lg sm:leading-7  ">
             このプロジェクトはモダンな技術スタックを使って作られたwebアプリケーションです。
             マークダウン形式でブログ投稿が出来ます。
           </p>
+          </div>
         </div>
 
         <div className="mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-[64rem]">
-          <div className="bg-background border p-2 rounded-lg">
+          <div className="bg-background border p-2 rounded-lg  block">
             <div className="flex flex-col justify-between p-6 h-[180px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +169,7 @@ export default function IndexPage() {
               </div>
             </div>
           </div>
-          <div className="bg-background border p-2 rounded-lg">
+          <div className="bg-background border p-2 rounded-lg block">
             <div className="flex flex-col justify-between p-6 h-[180px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +187,7 @@ export default function IndexPage() {
               </div>
             </div>
           </div>
-          <div className="bg-background border p-2 rounded-lg">
+          <div className="bg-background border p-2 rounded-lg block">
             <div className="flex flex-col justify-between p-6 h-[180px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +205,7 @@ export default function IndexPage() {
               </div>
             </div>
           </div>
-          <div className="bg-background border p-2 rounded-lg">
+          <div className="bg-background border p-2 rounded-lg block">
             <div className="flex flex-col justify-between p-6 h-[180px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +223,7 @@ export default function IndexPage() {
               </div>
             </div>
           </div>
-          <div className="bg-background border p-2 rounded-lg">
+          <div className="bg-background border p-2 rounded-lg block">
             <div className="flex flex-col justify-between p-6 h-[180px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +241,7 @@ export default function IndexPage() {
               </div>
             </div>
           </div>
-          <div className="bg-background border p-2 rounded-lg">
+          <div className="bg-background border p-2 rounded-lg block">
             <div className="flex flex-col justify-between p-6 h-[180px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +259,6 @@ export default function IndexPage() {
               </div>
             </div>
           </div>
-          {/* 同様のカードを追加 */}
         </div>
         <div className="mx-auto md:max-w-[58rem] text-center">
           <p className="text-muted-foreground sm:text-lg sm:leading-7">
@@ -192,7 +267,7 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="contact" className="container py-8 md:py-12 lg:py-24">
+      <section id="contact" className="container py-8 md:py-12 lg:py-24 block">
         <div className="max-w-[58rem] mx-auto text-center flex flex-col gap-4">
           <h2 className="font-extrabold text-3xl md:text-6xl">Contact Me!</h2>
           <p className="text-muted-foreground sm:text-lg sm:leading-7">

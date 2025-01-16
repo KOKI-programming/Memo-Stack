@@ -19,7 +19,7 @@ export default function Login() {
 
 
     return (
-        <div className="container grid flex-col lg:grid-cols-2 h-screen w-screen items-center justify-center lg:max-w-none lg:px-0 relative">
+        <div className="container grid flex-col lg:grid-cols-2 h-screen w-screen items-center justify-center lg:max-w-none lg:px-0 relative fade-in">
         <Link
             href={"/"}
             className={cn(buttonVariants({ variant: "ghost" }),
@@ -28,7 +28,7 @@ export default function Login() {
         >
             戻る
         </Link>
-        <div className="h-full bg-muted lg:flex hidden items-center justify-center">
+        <div className="h-full bg-muted lg:flex hidden items-center justify-center ">
             <div className="circle">
                 <div className="text">
                     <p className="font-bold">Creative UX / UI - Designer - Post writer -</p>

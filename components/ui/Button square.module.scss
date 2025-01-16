@@ -1,0 +1,41 @@
+.icon {
+    width :16px;
+    height: 16px;
+    stroke-width: 2;
+    color: #ffffff;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    right:22px;
+}
+
+.title {
+    letter-spacing: -0.5px;
+    font-weight: bold;
+    z-index:1;
+    font-family: 'Noto Sans JP', sans-serif; /* フォントを適用 */
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    cursor: pointer;
+
+    background-color: aliceblue;
+    padding: 12px 36px;
+    overflow: clip;
+}
+
+.square {
+    width: 8px;
+    height: 8px;
+    background-color: #000000;
+    position: absolute;
+    left: 22px;
+}
