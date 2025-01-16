@@ -4,7 +4,6 @@ import { NavItem } from "@/types";
 import Link from "next/link";
 import { ReactNode, useState } from "react";
 import MobileNav from "./mobile-nav";
-import Button1 from "@/components/ui/Button circle";
 
 interface MainNavProps {
     items: NavItem[];
@@ -18,7 +17,7 @@ export default function MainNav({ items }: MainNavProps) {
         <div className="flex items-center md:gap-10">
             <Link href={"/"} className="hidden md:flex items-center space-x-2">
                 <span className="hidden font-black sm:inline-block">
-                    Post Writer
+                    Memo Stack
                 </span>
             </Link>
             <nav className="md:flex gap-6 hidden">

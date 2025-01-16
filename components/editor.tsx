@@ -47,7 +47,6 @@ export default function Editor({post} : EditorProps) {
                 header:Header,
                 list:List,
                 code: Code,
-                linkTool: LinkTool,
             }
         });
     }, [post]);
@@ -125,7 +124,9 @@ const onSubmit = async (data: postPatchSchemaType) => {
                         >
                           戻る
                         </Link>
-                        <p className="text-sm text-muted-foreground">公開</p>
+                        <p className="text-sm text-muted-foreground">
+                        {post.published ? "Published" : ""}
+                        </p>
                     </div>
                     <button className={cn(buttonVariants())} type="submit" >
                         {isSaving && <Icon.spinner className="w-4 h-4 mr-2 animate-spin "/>}

@@ -1,12 +1,12 @@
 import { SiteConfig } from "@/types";
 
 export const siteConfig : SiteConfig = {
-    name: "Post Writer",
-    description: "ブログ投稿が出来るwebアプリケーションです",
+    name: "Memo Stack",
+    description: "メモ保存が出来るwebアプリケーションです",
     url: "https://localhost:3000",
     ogImage: "",
     links: {
-        x: "https://x.com/TUS_PR?t=dJ75u6ha-QroeYgIjM93Cw&s=09",
+        x: "https://x.com/Memo_Stack",
         github: "https://github.com/KOKI-programming",
     },
 };

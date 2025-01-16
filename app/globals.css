@@ -178,6 +178,23 @@ h6.ce-header {
 }
 
 
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-down {
+  animation: slideInDown 1s ease-out forwards;
+}
+
+
+
 .text-wrapper p {
   line-height: 0;
   &:nth-of-type(4) {
@@ -205,7 +222,7 @@ h6.ce-header {
   margin:-900px 0 0 -900px;
 }
 .circle2 {
-  background-color: #7e7e7e;
+  background-color: #ba9090;
   height: 420px;
   width: 420px;
   margin:-210px 0 0 -210px;
