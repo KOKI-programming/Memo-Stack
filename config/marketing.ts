@@ -5,7 +5,7 @@ export const marketingConfig: MarketingConfig = {
         { title:"ホーム",
           href: "/",
         },
-        { title:"メモ例",
+        { title:"メモ サンプル",
           href: "/blog",
         },
         { title:"プラン",

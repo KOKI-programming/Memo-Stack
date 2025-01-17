@@ -31,7 +31,7 @@ export default function PostCreateButton( {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                title: "Untitled Post",
+                title: "Untitled Memo",
             }),
         });
         setIsLoading(false);
@@ -39,7 +39,7 @@ export default function PostCreateButton( {
         if (!response.ok) {
           return toast({
             title: "問題が発生しました",
-            description: "投稿が作成されませんでした。もう一度お試しください。",
+            description: "メモが作成されませんでした。もう一度お試しください。",
             variant: "destructive",
           })
     };
@@ -67,7 +67,7 @@ export default function PostCreateButton( {
          ) : (
          <Icon.add className="mr-2 h-4 w-4" />
         )}
-        新しい投稿
+        新しいメモ
     </button>
   );
 }

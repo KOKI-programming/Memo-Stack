@@ -13,14 +13,14 @@ export default function SiteFooter(){
                     target="_blank"
                     rel="noreferrer"
                     >
-                    KOKI</Link>
-                    . Hosted on {""}
+                    Memo Stack</Link>
+                    {/* . Hosted on {""}
                     <Link href={"https://vercel.com"}
                     className="underline underline-offset-4 font-medium"
                     target="_blank"
                     rel="noreferrer"
                     >
-                    Vercel</Link>
+                    Vercel</Link> */}
                 </p>
             </div>
         </footer>

@@ -11,7 +11,7 @@ export const dashboardConfig: DashboardConfig = {
         },
     ],
     sidebarNav: [
-        { title: "記事投稿",
+        { title: "メモ",
           href: "/dashboard",
           icon: "post",
         },

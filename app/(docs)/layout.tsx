@@ -22,16 +22,16 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
           </MainNav>
           <div className="flex flex-1 items-center space-x-4 sm:justify-end">
             <div className="flex-1 sm:grow-0">
-              <DocsSearch />
+              {/* <DocsSearch /> */}
             </div>
             <nav className="flex space-x-4">
               <Link
-                href={siteConfig.links.github}
+                href={siteConfig.links.x}
                 target="_blank"
                 rel="noreferrer"
               >
-                <Icons.github className="h-7 w-7" />
-                <span className="sr-only">GitHub</span>
+                <Icons.x className="h-7 w-7" />
+                <span className="sr-only">X</span>
               </Link>
             </nav>
           </div>

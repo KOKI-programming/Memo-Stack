@@ -35,7 +35,7 @@ export default function PricingPage() {
           シンプルプラン
         </h2>
         <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          ブログへの無制限の投稿が可能です。
+          メモを無制限で保存可能です。
         </p>
       </div>
       <div className="grid w-full items-start gap-10 rounded-lg border p-10 md:grid-cols-[1fr_200px] ">
@@ -43,10 +43,10 @@ export default function PricingPage() {
           <h3 className="text-xl font-bold sm:text-2xl">シンプルプランに含まれるもの</h3>
           <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
             <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> 投稿数無制限
+              <Icons.check className="mr-2 h-4 w-4" /> メモ数無制限
             </li>
             <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> ユーザー数無制限
+              <Icons.check className="mr-2 h-4 w-4" /> 基本機能利用可
             </li>
           </ul>
         </div>
@@ -90,19 +90,13 @@ export default function PricingPage() {
             <h3 className="text-xl font-bold sm:text-2xl">プレミアムプランに含まれるもの</h3>
             <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
               <li className="flex items-center">
-                <Icons.check className="mr-2 h-4 w-4" /> 投稿数無制限
+                <Icons.check className="mr-2 h-4 w-4" /> メモ数無制限
               </li>
               <li className="flex items-center">
-                <Icons.check className="mr-2 h-4 w-4" /> ユーザー数無制限
+                <Icons.check className="mr-2 h-4 w-4" /> 基本機能利用可
               </li>
               <li className="flex items-center">
-                <Icons.check className="mr-2 h-4 w-4" /> カスタムドメイン
-              </li>
-              <li className="flex items-center">
-                <Icons.check className="mr-2 h-4 w-4" /> ダッシュボード分析
-              </li>
-              <li className="flex items-center">
-                <Icons.check className="mr-2 h-4 w-4" /> ディスコードへのアクセス可
+                <Icons.check className="mr-2 h-4 w-4" /> 拡張機能利用可
               </li>
               <li className="flex items-center">
                 <Icons.check className="mr-2 h-4 w-4" /> プレミアムサポート
@@ -111,7 +105,7 @@ export default function PricingPage() {
           </div>
           <div className="flex flex-col gap-4 text-center">
             <div>
-              <h4 className="text-7xl font-bold">月額500円</h4>
+              <h4 className="text-7xl font-bold">月額490円</h4>
               <p className="text-sm font-medium text-muted-foreground">Billed Monthly</p>
             </div>
             <Link href="#premium" className={cn(buttonVariants({ size: "lg" }))}>

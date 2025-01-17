@@ -17,7 +17,7 @@ interface DocPageProps {
   }
 }
 
-async function getDocFromParams(params) {
+async function getDocFromParams(params: DocPageProps["params"]) { // 型を追加
   const slug = params.slug?.join("/") || ""
   const doc = allDocs.find((doc) => doc.slugAsParams === slug)
 

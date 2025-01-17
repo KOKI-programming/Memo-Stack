@@ -35,7 +35,7 @@ export default async function DashboardPage() {
 
   return (
     <DashBoardShell>
-      <DashBoardHeader heading="記事投稿" text="記事の作成と管理">
+      <DashBoardHeader heading="メモ投稿" text="メモの作成と管理">
         <PostCreateButton />
       </DashBoardHeader>
       <div>
@@ -46,7 +46,7 @@ export default async function DashboardPage() {
             ))}
           </div>
         ) : (
-          <div className="ml-2">投稿がありません。</div>
+          <div className="ml-2">メモがありません。</div>
         )}
       </div>
     </DashBoardShell>

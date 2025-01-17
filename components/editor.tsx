@@ -9,7 +9,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
 import Code from '@editorjs/code';
-import LinkTool from '@editorjs/link';
 import { useForm } from "react-hook-form";
 import { Post } from "@prisma/client";
 import {zodResolver} from "@hookform/resolvers/zod";
@@ -17,6 +16,9 @@ import { postPatchSchema, postPatchSchemaType } from "@/lib/validations/post";
 import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation";
 import { Icon } from "./icon";
+import Underline from '@editorjs/underline';
+
+
 
 
 interface EditorProps {
@@ -40,13 +42,14 @@ export default function Editor({post} : EditorProps) {
             onReady: () => {
                 ref.current = editor;
             },
-            placeholder: 'ここに記事を書く',
-            inlineToolbar: true,
+            placeholder: 'ここにメモを書く',
+            inlineToolbar:  ['underline', 'bold', 'italic', 'link'],
             data: body.content ,
             tools: {
                 header:Header,
                 list:List,
                 code: Code,
+                underline: Underline,
             }
         });
     }, [post]);
@@ -90,7 +93,7 @@ const onSubmit = async (data: postPatchSchemaType) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            title: data.title,
+            title: data.title || "Untitled Memo", // タイトルが空の場合は "Untitled Memo" を設定
             content: blocks,
         }),
     });
@@ -101,15 +104,15 @@ const onSubmit = async (data: postPatchSchemaType) => {
     if(!response.ok) {
         return toast({
             title:'問題が発生しました',
-            description: '記事の保存中に問題が発生しました。もう一度お試しください。',
+            description: 'メモの保存中に問題が発生しました。もう一度お試しください。',
             variant: "destructive"
         });
     }
     router.refresh();
 
     return toast({
-        title: '記事が保存されました',
-        description: '記事が正常に保存されました',
+        title: 'メモが保存されました',
+        description: 'メモが正常に保存されました',
     });
 };
 
@@ -137,8 +140,8 @@ const onSubmit = async (data: postPatchSchemaType) => {
                     <TextareaAutoSize
                         id="title"
                         autoFocus
-                        defaultValue={post.title}
-                        placeholder="Post title"
+                        defaultValue={post.title|| "Untitled Memo"}
+                        placeholder="Memo title"
                         className="w-full resize-none overflow-hidden bg-transparent text-5xl focus:outline-none font-bold"
                         {...register("title")}
                     />

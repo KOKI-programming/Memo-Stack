@@ -12,10 +12,10 @@ export default function BlogPage() {
             <div>
               <div className="space-y-4">
                 <h1 className="font-extrabold text-4xl lg:text-5xl tracking-tight">
-                    ブログ🚀
+                    メモ サンプル📝
                 </h1>
                 <p className="text-muted-foreground text-xl">
-                    ContentLayerとMDXで書いています。</p>
+                    マークダウン形式で以下のようなメモを作ることができます。</p>
               </div>
             </div>
             <hr className="my-8"/>

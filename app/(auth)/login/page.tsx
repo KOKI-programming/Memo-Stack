@@ -31,7 +31,7 @@ export default function Login() {
         <div className="h-full bg-muted lg:flex hidden items-center justify-center ">
             <div className="circle">
                 <div className="text">
-                    <p className="font-bold">Creative UX / UI - Designer - Post writer -</p>
+                    <p className="font-bold">Creative UX / UI - Designer - Memo Stack -</p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" className="center-image" width="200" height="200" viewBox="0 0 24 24">
                     <g fill="none" stroke="currentColor" strokeWidth="1.5">

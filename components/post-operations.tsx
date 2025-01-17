@@ -55,9 +55,9 @@ export default function PostOperations({post}: PostOperationsProps) {
          <AlertDialog open={showDeleteAlert} onOpenChange={setShowDeleteAlert}>
   <AlertDialogContent>
     <AlertDialogHeader>
-      <AlertDialogTitle>本当にこの記事を削除しますか？</AlertDialogTitle>
+      <AlertDialogTitle>本当にこのメモを削除しますか？</AlertDialogTitle>
       <AlertDialogDescription>
-        この記事を削除すると、元に戻すことはできません。
+        このメモを削除すると、元に戻すことはできません。
       </AlertDialogDescription>
     </AlertDialogHeader>
     <AlertDialogFooter>
@@ -103,7 +103,7 @@ export default function PostOperations({post}: PostOperationsProps) {
       } catch (error) {
           toast({
               title: "エラーが発生しました",
-              description: "記事を削除できませんでした。もう一度お試しください。",
+              description: "メモを削除できませんでした。もう一度お試しください。",
               variant: "destructive",
           })
       }
