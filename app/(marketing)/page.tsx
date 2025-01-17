@@ -14,7 +14,7 @@ export default function IndexPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const titles = gsap.utils.toArray(".text-wrapper p");
+    const titles = gsap.utils.toArray(".text-wrapper p") as HTMLElement[];
     const tl = gsap.timeline({ repeat: -1 });
 
     titles.forEach((title) => {
@@ -40,7 +40,7 @@ export default function IndexPage() {
         "<1"
       );
     });
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
 

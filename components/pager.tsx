@@ -19,7 +19,7 @@ export function DocsPager({ doc }: DocsPagerProps) {
 
   return (
     <div className="flex flex-row items-center justify-between">
-      {pager?.prev && (
+      {pager?.prev && pager.prev.href && (
         <Link
           href={pager.prev.href}
           className={cn(buttonVariants({ variant: "ghost" }))}
@@ -28,7 +28,7 @@ export function DocsPager({ doc }: DocsPagerProps) {
           {pager.prev.title}
         </Link>
       )}
-      {pager?.next && (
+      {pager?.next && pager.next.href && (
         <Link
           href={pager.next.href}
           className={cn(buttonVariants({ variant: "ghost" }), "ml-auto")}
@@ -57,8 +57,14 @@ export function getPagerForDoc(doc: Doc) {
   }
 }
 
-export function flatten(links: { items? }[]) {
-  return links.reduce((flat, link) => {
+interface LinkItem {
+  href?: string
+  title?: string
+  items?: LinkItem[]
+}
+
+export function flatten(links: LinkItem[]): LinkItem[] { // 型を追加
+  return links.reduce((flat: LinkItem[], link: LinkItem) => {
     return flat.concat(link.items ? flatten(link.items) : link)
   }, [])
 }

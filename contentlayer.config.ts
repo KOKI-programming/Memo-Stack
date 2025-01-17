@@ -7,6 +7,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import { Plugin } from "unified";
 
 const computedFields: ComputedFields = {
   slug: {
@@ -148,7 +149,7 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       [
-        rehypePrettyCode,
+        rehypePrettyCode as Plugin,
         {
           theme: "github-dark",
           onVisitLine(node: any) {

@@ -15,7 +15,7 @@ interface PageProps {
   }
 }
 
-async function getPageFromParams(params) {
+async function getPageFromParams(params: PageProps["params"]) { // 型を追加
   const slug = params?.slug?.join("/")
   const page = allPages.find((page) => page.slugAsParams === slug)
 
