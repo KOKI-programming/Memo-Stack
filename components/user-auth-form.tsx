@@ -18,7 +18,7 @@ export default function UserAuthForm() {
 
     return(
         <div className="grid gap-6">
-            <form>
+            {/* <form>
                 <div className="grid gap-2">
                     <div className="grid gap-1">
                         <Label htmlFor="email">
@@ -30,19 +30,9 @@ export default function UserAuthForm() {
                         メールアドレスでログイン
                     </button>
                 </div>
-            </form>
+            </form> */}
 
 
-            <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                    <span className="w-full border-t"/>
-                </div>
-                <div className="relative flex justify-center text-xs">
-                    <span className="text-muted-foreground px-2 bg-background">
-                        または
-                    </span>
-                </div>
-            </div>
 
         <div className="flex flex-col gap-2">
 
@@ -60,6 +50,16 @@ export default function UserAuthForm() {
                     Google
             </button>
 
+            <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t"/>
+                </div>
+                <div className="relative flex justify-center text-xs">
+                    <span className="text-muted-foreground px-2 bg-background">
+                        または
+                    </span>
+                </div>
+            </div>
 
             <button
             className={cn(buttonVariants({variant : "outline"}))}
@@ -75,6 +75,16 @@ export default function UserAuthForm() {
                 LINE
             </button>
 
+            <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t"/>
+                </div>
+                <div className="relative flex justify-center text-xs">
+                    <span className="text-muted-foreground px-2 bg-background">
+                        または
+                    </span>
+                </div>
+            </div>
 
             <button
             className={cn(buttonVariants({variant : "outline"}))}

@@ -102,7 +102,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
             className={cn(buttonVariants({ variant: "ghost" }))}
           >
             <Icons.chevronLeft className="mr-2 h-4 w-4" />
-            See all guides
+            全ての記事を見る
           </Link>
         </div>
       </div>
