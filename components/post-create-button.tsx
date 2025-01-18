@@ -55,6 +55,7 @@ export default function PostCreateButton( {
     <button className={cn(
         buttonVariants({variant}),
         {"cursor-not-allowed opacity-60" : isLoading},
+        "animation",
          className
          )}
          onClick={onClick}

@@ -150,7 +150,6 @@ export default function IndexPage() {
           <div className="mt-8">
           <p className="text-muted-foreground sm:text-lg sm:leading-7 ">
           アイデアやタスクの管理がもっと簡単に、効率的になります。 <br />
-          マークダウン形式で直感的に記述できるので、整理整頓もスムーズに。 <br />
           あなたの創造力や計画力を最大限に引き出します！
           </p>
           </div>
@@ -218,7 +217,7 @@ export default function IndexPage() {
               <div className="space-y-2">
                 <h3 className="font-bold">直感操作</h3>
                 <p className="text-sm text-muted-foreground">
-                マークダウン形式で記述するため直感的な操作が可能です。
+               直感的に操作できるシンプルなデザインを採用しています。
                 </p>
               </div>
             </div>

@@ -250,3 +250,39 @@ h6.ce-header {
   mix-blend-mode: screen;
   background-color: rgb(255, 255, 255);
 }
+
+
+
+button.animation {
+  cursor: pointer;
+  position: relative;
+  padding : 0.5em 1.5em;
+  border-radius: 0px;
+}
+
+button.animation::after, button.animation::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  transition: all 0.8s ease;
+}
+
+button.animation::after {
+  border-top: 3px solid #000000;
+  border-left: 3px solid #000000;
+  top: -5px;
+  left: -5px;
+}
+
+button.animation::before {
+  border-bottom: 3px solid #000000;
+  border-right: 3px solid #000000;
+  bottom: -5px;
+  right: -5px;
+}
+
+button.animation:hover::after, button.animation:hover::before {
+  width: 100%;
+  height: 100%;
+}

@@ -67,6 +67,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@groupher/editor-emoji": "^1.0.5",
     "@tailwindcss/typography": "^0.5.15",
     "@types/editorjs__header": "^2.6.3",
     "@types/node": "^20",
