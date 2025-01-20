@@ -15,7 +15,7 @@ export default function BlogPage() {
                     メモ サンプル📝
                 </h1>
                 <p className="text-muted-foreground text-xl">
-                    マークダウン形式で以下のようなメモを作ることができます。</p>
+                    ユーザーは以下のようなメモを作ることができます。</p>
               </div>
             </div>
             <hr className="my-8"/>
